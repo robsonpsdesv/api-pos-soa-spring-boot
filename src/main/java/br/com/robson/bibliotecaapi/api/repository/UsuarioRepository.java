@@ -1,10 +1,9 @@
-package br.com.faculdadedelta.bibliotecaapi.repository;
+package br.com.robson.bibliotecaapi.api.repository;
 
-import java.util.Optional;
-
+import br.com.robson.bibliotecaapi.api.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.faculdadedelta.bibliotecaapi.model.Usuario;
+import java.util.Optional;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 

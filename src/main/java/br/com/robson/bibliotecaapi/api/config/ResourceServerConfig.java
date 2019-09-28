@@ -2,11 +2,13 @@ package br.com.robson.bibliotecaapi.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 @Configuration
+@EnableWebSecurity
 public class ResourceServerConfig 
 				extends ResourceServerConfigurerAdapter {
 
@@ -16,15 +18,20 @@ public class ResourceServerConfig
 		.antMatchers("/v2/api-docs",
 				"/configuration/ui",
 				"/swagger-resources/**",
+				"/configuration/security",
 				"/swagger-ui.html",
 				"/webjars/**",
-				"/h2-console/**").permitAll()
-		.anyRequest().authenticated()
-		.and()
-			.sessionManagement()
-			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-			.csrf().disable();
+				"/h2-console/**")
+				.permitAll()
+				.anyRequest().authenticated()
+				.and()
+				.httpBasic()
+				.and()
+				.sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				.and()
+				.csrf().disable()
+				.headers().frameOptions().sameOrigin();
 	}
 	
 	@Override

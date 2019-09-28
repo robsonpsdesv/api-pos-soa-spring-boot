@@ -1,13 +1,7 @@
-package br.com.faculdadedelta.bibliotecaapi.model;
+package br.com.robson.bibliotecaapi.api.model;
 
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 
 @Entity
 public class Usuario {

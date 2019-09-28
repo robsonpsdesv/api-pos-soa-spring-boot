@@ -1,11 +1,10 @@
-package br.com.faculdadedelta.bibliotecaapi.seguranca;
+package br.com.robson.bibliotecaapi.api.seguranca;
 
-import java.util.Collection;
-
+import br.com.robson.bibliotecaapi.api.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import br.com.faculdadedelta.bibliotecaapi.model.Usuario;
+import java.util.Collection;
 
 public class UsuarioSistema extends User {
 

@@ -1,10 +1,7 @@
-package br.com.faculdadedelta.bibliotecaapi.seguranca;
+package br.com.robson.bibliotecaapi.api.seguranca;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-
+import br.com.robson.bibliotecaapi.api.model.Usuario;
+import br.com.robson.bibliotecaapi.api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,8 +10,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.faculdadedelta.bibliotecaapi.model.Usuario;
-import br.com.faculdadedelta.bibliotecaapi.repository.UsuarioRepository;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class AppUserDetailsService implements UserDetailsService {

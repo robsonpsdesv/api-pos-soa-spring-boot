@@ -1,6 +1,6 @@
 package br.com.robson.bibliotecaapi.api.config;
 
-import br.com.faculdadedelta.bibliotecaapi.token.CustomTokenEnhancer;
+import br.com.robson.bibliotecaapi.api.token.CustomTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,6 @@ public class AuthenticationServerConfig extends AuthorizationServerConfigurerAda
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-	//admin
 	private String secretKey = "$2a$10$CG48p7zyaG3n0zOGgJk8P.Pclgzc1XhvzHMpBh7V9g8dpKnpgXS3q";
 
 	private String signingKey = "apiBiblioteca";

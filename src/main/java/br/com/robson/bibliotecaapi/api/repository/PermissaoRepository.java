@@ -1,8 +1,7 @@
-package br.com.faculdadedelta.bibliotecaapi.repository;
+package br.com.robson.bibliotecaapi.api.repository;
 
+import br.com.robson.bibliotecaapi.api.model.Permissao;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.faculdadedelta.bibliotecaapi.model.Permissao;
 
 public interface PermissaoRepository extends JpaRepository<Permissao, Long> {
 
