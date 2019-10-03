@@ -19,7 +19,7 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O campo nome é obrigatorio.")
+    @NotBlank(message = "autor.nome-obrigatorio")
     private String nome;
 
     @Enumerated(EnumType.STRING)

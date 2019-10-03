@@ -5,6 +5,7 @@ import br.com.robson.bibliotecaapi.api.service.AutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -22,6 +23,7 @@ public class AutorResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAuthority('ROLE_INCLUIR_AUTOR')")
     public Autor inserir(@RequestBody @Valid Autor autor, HttpServletResponse response){
 
         Autor autorSalvo = autorService.inserir (autor);
@@ -39,6 +41,7 @@ public class AutorResource {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAuthority('ROLE_LISTAR_AUTOR')")
     public List<Autor> listar(){
 
         return autorService.listar ();
@@ -47,6 +50,7 @@ public class AutorResource {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_AUTOR')")
     public Autor pesquisarPorId(@PathVariable("id") Long id){
 
         return autorService.pesquisarPorId (id);
@@ -55,6 +59,7 @@ public class AutorResource {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasAuthority('ROLE_ALTERAR_AUTOR')")
     public Autor alterar(@RequestBody @Valid Autor autor, @PathVariable Long id){
 
         return autorService.alterar (autor, id);
@@ -63,6 +68,7 @@ public class AutorResource {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_AUTOR')")
     public void remover(@PathVariable Long id){
 
         autorService.excluir (id);

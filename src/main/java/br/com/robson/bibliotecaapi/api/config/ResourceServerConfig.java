@@ -9,11 +9,11 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 
 @Configuration
 @EnableWebSecurity
-public class ResourceServerConfig 
-				extends ResourceServerConfigurerAdapter {
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
+
 		http.authorizeRequests()
 		.antMatchers("/v2/api-docs",
 				"/configuration/ui",
@@ -35,9 +35,7 @@ public class ResourceServerConfig
 	}
 	
 	@Override
-	public void configure(
-			ResourceServerSecurityConfigurer resources) 
-					throws Exception {
+	public void configure( ResourceServerSecurityConfigurer resources) throws Exception {
 		resources.stateless(true);
 	}
 }
