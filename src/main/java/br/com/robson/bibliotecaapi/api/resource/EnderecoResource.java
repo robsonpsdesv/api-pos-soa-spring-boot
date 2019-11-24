@@ -23,7 +23,7 @@ public class EnderecoResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasAuthority('ROLE_INCLUIR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_INCLUIR_EMPRESTIMO')")
     public Endereco inserir(@RequestBody @Valid Endereco endereco, HttpServletResponse response){
 
         Endereco enderecoSalvo = enderecoService.inserir (endereco);
@@ -41,7 +41,7 @@ public class EnderecoResource {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_LISTAR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_LISTAR_EMPRESTIMO')")
     public List<Endereco> listar(){
 
         return enderecoService.listar ();
@@ -49,7 +49,7 @@ public class EnderecoResource {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_EMPRESTIMO')")
     public Endereco pesquisarPorId(@PathVariable("id") Long id){
 
         return enderecoService.pesquisarPorId (id);
@@ -57,7 +57,7 @@ public class EnderecoResource {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_ALTERAR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_ALTERAR_EMPRESTIMO')")
     public Endereco alterar(@RequestBody @Valid Endereco endereco, @PathVariable Long id){
 
         return enderecoService.alterar (endereco, id);
@@ -65,7 +65,7 @@ public class EnderecoResource {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_EMPRESTIMO')")
     public void remover(@PathVariable Long id){
 
         enderecoService.excluir (id);

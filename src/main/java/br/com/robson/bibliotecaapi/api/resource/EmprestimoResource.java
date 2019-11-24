@@ -23,7 +23,7 @@ public class EmprestimoResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasAuthority('ROLE_INCLUIR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_INCLUIR_EMPRESTIMO')")
     public Emprestimo inserir(@RequestBody @Valid Emprestimo emprestimo, HttpServletResponse response){
 
         Emprestimo emprestimoSalvo = emprestimoService.inserir (emprestimo);
@@ -41,7 +41,7 @@ public class EmprestimoResource {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_LISTAR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_LISTAR_EMPRESTIMO')")
     public List<Emprestimo> listar(){
 
         return emprestimoService.listar ();
@@ -49,7 +49,7 @@ public class EmprestimoResource {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_EMPRESTIMO')")
     public Emprestimo pesquisarPorId(@PathVariable("id") Long id){
 
         return emprestimoService.pesquisarPorId (id);
@@ -57,7 +57,7 @@ public class EmprestimoResource {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_ALTERAR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_ALTERAR_EMPRESTIMO')")
     public Emprestimo alterar(@RequestBody @Valid Emprestimo emprestimo, @PathVariable Long id){
 
         return emprestimoService.alterar (emprestimo, id);
@@ -65,7 +65,7 @@ public class EmprestimoResource {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_EMPRESTIMO')")
+//    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_EMPRESTIMO')")
     public void remover(@PathVariable Long id){
 
         emprestimoService.excluir (id);

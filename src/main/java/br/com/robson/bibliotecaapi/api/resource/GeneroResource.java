@@ -23,7 +23,7 @@ public class GeneroResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    @PreAuthorize("hasAuthority('ROLE_INCLUIR_GENERO')")
+//    @PreAuthorize("hasAuthority('ROLE_INCLUIR_GENERO')")
     public Genero inserir(@RequestBody @Valid Genero genero, HttpServletResponse response){
 
         Genero generoSalvo = generoService.inserir (genero);
@@ -41,7 +41,7 @@ public class GeneroResource {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_LISTAR_GENERO')")
+//    @PreAuthorize("hasAuthority('ROLE_LISTAR_GENERO')")
     public List<Genero> listar(){
 
         return generoService.listar ();
@@ -50,7 +50,7 @@ public class GeneroResource {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_GENERO')")
+//    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_POR_ID_GENERO')")
     public Genero pesquisarPorId(@PathVariable("id") Long id){
 
         return generoService.pesquisarPorId (id);
@@ -59,7 +59,7 @@ public class GeneroResource {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasAuthority('ROLE_ALTERAR_GENERO')")
+//    @PreAuthorize("hasAuthority('ROLE_ALTERAR_GENERO')")
     public Genero alterar(@RequestBody @Valid Genero genero, @PathVariable Long id){
 
         return generoService.alterar (genero, id);
@@ -68,7 +68,7 @@ public class GeneroResource {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_GENERO')")
+//    @PreAuthorize("hasAuthority('ROLE_EXCLUIR_GENERO')")
     public void remover(@PathVariable Long id){
 
         generoService.excluir (id);

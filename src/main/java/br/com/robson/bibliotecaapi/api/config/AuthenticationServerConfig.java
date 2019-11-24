@@ -34,7 +34,7 @@ public class AuthenticationServerConfig extends AuthorizationServerConfigurerAda
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
 		clients.inMemory().withClient("apiBibliotecaClient").secret(secretKey).scopes("write", "read")
-				.authorizedGrantTypes("password", "refresh_token").accessTokenValiditySeconds(60)
+				.authorizedGrantTypes("password", "refresh_token").accessTokenValiditySeconds(600)
 				.refreshTokenValiditySeconds(3600 * 24);
 	}
 

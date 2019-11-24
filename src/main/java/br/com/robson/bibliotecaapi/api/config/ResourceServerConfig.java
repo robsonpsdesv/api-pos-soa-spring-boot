@@ -23,7 +23,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 				"/webjars/**",
 				"/h2-console/**")
 				.permitAll()
-				.anyRequest().authenticated()
+//				.anyRequest().authenticated()
 				.and()
 				.httpBasic()
 				.and()

@@ -1,6 +1,6 @@
 -- users SENHA admin
-INSERT INTO usuario (id, nome, email, senha) values (1, 'Administrador', 'admin@admin.com', '$2a$10$3y4RPg/.MZOCz9bsKoHtbOWmBlg4L43rLyU1ee/r0UeOg0Sa5SvzO');
-INSERT INTO usuario (id, nome, email, senha) values (2, 'Usuario', 'usuario@usuario.com', '$2a$10$3y4RPg/.MZOCz9bsKoHtbOWmBlg4L43rLyU1ee/r0UeOg0Sa5SvzO');
+INSERT INTO usuario (id, nome, email, senha) values (1, 'Administrador', 'admin@admin.com', '$2a$10$y0BsP/5lZt/97vlSUwiQL.Sy3dz/wmoYdOIZ/zCoRPhb.PeJJwP1W');
+INSERT INTO usuario (id, nome, email, senha) values (2, 'Usuario', 'usuario@usuario.com', '$2a$10$y0BsP/5lZt/97vlSUwiQL.Sy3dz/wmoYdOIZ/zCoRPhb.PeJJwP1W');
 
 -- roles
 -- livro
